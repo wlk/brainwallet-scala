@@ -15,3 +15,12 @@ $ sbt "run-main com.wlangiewicz.brainwallet.Main abc both"
 We are interested in this line: `1NEwmNSC7w9nZeASngHCd43Bc5eC2FmXpn,5KEQgeL4EwjuEAyPQBoaJYVrbt5kSUsrwXPkjzAQTPiNoUxxeS8`  
 Part before comma is the public address  
 Part after comma is the private address in WIF format
+
+
+##Generating runnable jar:  
+just run:  
+```
+sbt assembly
+```
+
+This will create brainwallet.jar in target/scala-2.11/ directory
