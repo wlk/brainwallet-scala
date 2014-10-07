@@ -8,17 +8,17 @@ import org.bitcoinj.params.MainNetParams
 
 object Brainwallet {
   def getAddress(s: String) = {
-    val bw = new Brainwallet()
-    new ECKey(bw.getHash(s), null).toAddress(MainNetParams.get).toString
+    val SHA256 = new SHA256()
+    new ECKey(SHA256.getHash(s), null).toAddress(MainNetParams.get).toString
   }
 
   def getWIF(s: String): String = {
-    val bw = new Brainwallet()
-    new ECKey(bw.getHash(s), null).getPrivateKeyEncoded(MainNetParams.get).toString
+    val SHA256 = new SHA256()
+    new ECKey(SHA256.getHash(s), null).getPrivateKeyEncoded(MainNetParams.get).toString
   }
 }
 
-class Brainwallet(){
+class SHA256(){
   val md: MessageDigest  = MessageDigest.getInstance("SHA-256")
 
   def getHash(s: String) ={
