@@ -1,5 +1,7 @@
 package com.wlangiewicz.brainwallet
 
+import scala.io.Source
+
 object Main extends App {
 
   def processInput(input: String, option: String): String = {
@@ -11,13 +13,21 @@ object Main extends App {
     }
   }
 
+  def processInputFile(filePath: String) = {
+    for(line <- Source.fromFile(filePath).getLines()){
+      Console.println(BulkBrainwallet.getWIF(line))
+    }
+  }
+
   override def main(args: Array[String]): Unit ={
-    if(args.length != 2){
-      Console.println("USAGE: sbt \"run-main com.wlangiewicz.brainwallet.Main <your brainwallet password> public|private|both\"")
+    if(args.length != 3){
+      Console.println("USAGE: sbt \"run-main com.wlangiewicz.brainwallet.Main password|file <your brainwallet password> public|private|both\"")
     }
     else{
-      val output = processInput(args(0), args(1))
-      Console.println(output)
+      args(0) match {
+        case "password" => Console.println(processInput(args(1), args(2)))
+        case "file" => processInputFile(args(1)) //at the moment 3rd argument is ignored in this case, we always will get private
+      }
     }
   }
 }

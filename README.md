@@ -3,6 +3,7 @@ Brainwallet generator written in scala using bitcoinj library
 It will output private key in `dumpwallet` format so you can import into bitcoin-qt or any other bitcoin tool that supports this format
 
 ##Running:
+###password from command line
 ```
 $ sbt "run-main com.wlangiewicz.brainwallet.Main abc both"
 [info] Loading project definition from /home/w/brainwallet-generator/project
@@ -15,6 +16,12 @@ $ sbt "run-main com.wlangiewicz.brainwallet.Main abc both"
 We are interested in this line: `1NEwmNSC7w9nZeASngHCd43Bc5eC2FmXpn,5KEQgeL4EwjuEAyPQBoaJYVrbt5kSUsrwXPkjzAQTPiNoUxxeS8`  
 Part before comma is the public address  
 Part after comma is the private address in WIF format
+
+###file with passwords
+File should contain one password per line, this is example usage:
+```
+java -jar target/scala-2.11/brainwallet.jar file ~/mypassword.txt private >> ~/private-keys
+```
 
 
 ##Generating runnable jar:  

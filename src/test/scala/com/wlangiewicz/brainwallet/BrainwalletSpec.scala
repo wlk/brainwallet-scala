@@ -1,6 +1,6 @@
 package com.wlangiewicz.brainwallet
 
-class BrainwalletGeneratorSpec extends UnitSpec {
+class BrainwalletSpec extends UnitSpec {
   "Brainwallet" should "generate WIF for \"abc\"" in {
     val output = Brainwallet.getWIF("abc")
     output should be ("5KEQgeL4EwjuEAyPQBoaJYVrbt5kSUsrwXPkjzAQTPiNoUxxeS8")
