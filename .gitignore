@@ -1,0 +1,7 @@
+.idea/
+target/
+*.spvchain
+*.wallet
+*.dat
+*.spv
+
