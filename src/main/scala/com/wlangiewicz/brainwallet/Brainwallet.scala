@@ -7,14 +7,13 @@ import org.bitcoinj.params.MainNetParams
 
 
 object Brainwallet {
-  val bw = new Brainwallet()
-
   def getAddress(s: String) = {
     val bw = new Brainwallet()
     new ECKey(bw.getHash(s), null).toAddress(MainNetParams.get).toString
   }
 
   def getWIF(s: String): String = {
+    val bw = new Brainwallet()
     new ECKey(bw.getHash(s), null).getPrivateKeyEncoded(MainNetParams.get).toString
   }
 }
