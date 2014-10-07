@@ -23,4 +23,8 @@ just run:
 sbt assembly
 ```
 
-This will create brainwallet.jar in target/scala-2.11/ directory
+This will create brainwallet.jar in target/scala-2.11/ directory, you can run it like this:  
+```
+$ java -jar target/scala-2.11/brainwallet.jar abc both
+1NEwmNSC7w9nZeASngHCd43Bc5eC2FmXpn,5KEQgeL4EwjuEAyPQBoaJYVrbt5kSUsrwXPkjzAQTPiNoUxxeS8
+```
