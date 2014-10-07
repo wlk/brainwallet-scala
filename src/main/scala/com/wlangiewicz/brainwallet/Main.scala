@@ -6,7 +6,7 @@ object Main extends App {
     option match {
       case "public" => Brainwallet.getAddress(input)
       case "private" => Brainwallet.getWIF(input)
-      case "both" => f"${Brainwallet.getAddress(input)}\n${Brainwallet.getWIF(input)}"
+      case "both" => f"${Brainwallet.getAddress(input)},${Brainwallet.getWIF(input)}"
       case _ => "Please specify: public, private or both"
     }
   }
