@@ -20,7 +20,7 @@ Part after comma is the private address in WIF format
 ###file with passwords
 File should contain one password per line, this is example usage:
 ```
-java -jar target/scala-2.11/brainwallet.jar file ~/mypassword.txt private >> ~/private-keys
+java -jar target/scala-2.11/brainwallet.jar file ~/mypasswords.txt private >> ~/private-keys
 ```
 
 

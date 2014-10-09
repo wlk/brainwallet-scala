@@ -1,5 +1,7 @@
 package com.wlangiewicz.brainwallet
 
+import java.io.{FileReader, BufferedReader}
+
 import scala.io.Source
 
 object Main extends App {
@@ -14,9 +16,9 @@ object Main extends App {
   }
 
   def processInputFile(filePath: String) = {
-    for(line <- Source.fromFile(filePath).getLines()){
-      Console.println(BulkBrainwallet.getWIF(line))
-    }
+    val br: BufferedReader  = new BufferedReader(new FileReader(filePath))
+
+    Stream.continually(br.readLine()).takeWhile(_ != null).foreach{ line => Console.println(BulkBrainwallet.getWIF(line))}
   }
 
   override def main(args: Array[String]): Unit ={
